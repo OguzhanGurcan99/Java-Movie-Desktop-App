@@ -1,0 +1,42 @@
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Map;
+import javax.swing.DefaultListModel;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+ public void displayJson( DefaultListModel<String> movieListModel, Map<String, String> moviePosterMap ){
+        File jsonFile = new File("movies.json");
+
+        if (jsonFile.exists()) {
+            JSONParser jsonParser = new JSONParser();
+
+            try (FileReader reader = new FileReader(jsonFile)) {
+                // JSON dosyasını parse et
+                Object obj = jsonParser.parse(reader);
+                JSONArray movieList = (JSONArray) obj;
+
+                // Her bir filmi al ve listeye ekle
+                for (Movie movieObj : movieList) {
+                    JSONObject movieJson = (JSONObject) movieObj;
+
+                    String movieName = (String) movieJson.get("name");
+                    String movieYear = (String) movieJson.get("year");
+                    String posterPath = (String) movieJson.get("poster");
+
+                    // Listeye ekle
+                    String movieTitle = movieName + " (" + movieYear + ")";
+                    movieListModel.addElement(movieTitle);
+                    moviePosterMap.put(movieTitle, posterPath);
+                }
+            } catch (IOException | ParseException e) {
+                showError("Error reading movies.json!");
+            }
+
+
+        }
+
+    }

@@ -1,0 +1,21 @@
+[ {
+  "name" : "Hobbit",
+  "year" : "2021",
+  "poster" : "C:\\Users\\oguzh\\Desktop\\poster\\hobbit.jpg"
+}, {
+  "name" : "inception",
+  "year" : "52",
+  "poster" : "C:\\Users\\oguzh\\Desktop\\poster\\memento.jpg"
+}, {
+  "name" : "Kuru otlar",
+  "year" : "2023",
+  "poster" : "C:\\Users\\oguzh\\Desktop\\poster\\kuruotlarüstüne.jpg"
+}, {
+  "name" : "godfather",
+  "year" : "1972",
+  "poster" : "C:\\Users\\oguzh\\Desktop\\poster\\godfather.jpg"
+}, {
+  "name" : "kk",
+  "year" : "8888",
+  "poster" : "C:\\Users\\oguzh\\Desktop\\restApi.png"
+} ]
